@@ -1,7 +1,14 @@
+import Sidebar from "../components/sidebar.jsx";
+import { Outlet } from "react-router-dom";
+
 const Home = () => {
   return (
-    <div>
-      <h1>home</h1>
+    <div className="flex h-screen bg-gray-100">
+      {/* Sidebar */}
+      <Sidebar></Sidebar>
+
+      {/* Main content */}
+      <Outlet></Outlet>
     </div>
   );
 };
