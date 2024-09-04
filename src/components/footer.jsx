@@ -4,10 +4,10 @@ const Footer = () => {
       <p>
         © Greytip Software Pvt. Ltd |{" "}
         <a href="#" className="hover:underline">
-          Privacy
+          Privacy Policy  |{" "}
         </a>
         <a href="#" className="hover:underline">
-          Terms
+          Terms of Service
         </a>
       </p>
     </footer>
