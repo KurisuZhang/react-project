@@ -4,7 +4,8 @@ import Login from './pages/login.jsx';
 import HomeComponent from './components/home/homeComponent.jsx';
 import EngageComponent from './components/home/engageComponent.jsx';
 import HolidayCalendar from './components/home/holidaycalendar.jsx';
-import LeaveBalancesComponent from './components/home/leaveBalancesComponent.jsx';
+import LeaveBalances from './components/leaveBalances.jsx';
+import LeaveCalendar from './components/leaveCalendar.jsx';
 
 function App() {
   return (
@@ -15,7 +16,11 @@ function App() {
             <Route index element={<HomeComponent />} />
             <Route path="engage" element={<EngageComponent />} />
             <Route path="holidaycalendar" element={<HolidayCalendar />} />
-            <Route path="leave-balances" element={<LeaveBalancesComponent />} />
+            <Route path="leave/leave-balances" element={<LeaveBalances />} />
+            <Route
+              path="/leave/leave-calendar"
+              element={<LeaveCalendar />}
+            />{' '}
           </Route>
           <Route path="login" element={<Login />} />
         </Routes>

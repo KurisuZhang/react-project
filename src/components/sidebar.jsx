@@ -30,7 +30,7 @@ export function Sidebar() {
   };
 
   return (
-    <Card className="w-64 max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className="h-auto w-64 max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 p-4">
         <img src="/centillionz.jpg" alt="Company Logo" />
       </div>
@@ -175,11 +175,15 @@ export function Sidebar() {
                   <SidebarItem
                     text="Leave Balances"
                     isLink={true}
-                    to="/leave-balances"
+                    to="/leave/leave-balances"
                   />
                 </div>
                 <div className="ml-4">
-                  <SidebarItem text="Leave Calendar" isLink={true} to="/" />
+                  <SidebarItem
+                    text="Leave Calendar"
+                    isLink={true}
+                    to="/leave/leave-calendar"
+                  />
                 </div>
                 <div className="ml-4">
                   <SidebarItem
