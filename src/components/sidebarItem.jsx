@@ -8,7 +8,7 @@ const SidebarItem = ({
   isLink = false,
   to,
   suffixIcon,
-  className = 'text-gray-400',
+  className = '',
 }) => {
   if (isLink) {
     return (

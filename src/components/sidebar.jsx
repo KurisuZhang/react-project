@@ -77,7 +77,7 @@ export function Sidebar() {
                 <ChevronDownIcon className="h-4 w-4" />
               )
             }
-            className={open === 2 ? 'text-gray-700' : 'text-gray-500'}
+            className={open === 2 ? 'text-gray-700' : ''}
           />
 
           {open === 2 && (
@@ -106,7 +106,7 @@ export function Sidebar() {
                 <ChevronDownIcon className="h-4 w-4" />
               )
             }
-            className={open === 3 ? 'text-gray-700' : 'text-gray-500'}
+            className={open === 3 ? 'text-gray-700' : ''}
           />
           {open === 3 && (
             <AccordionBody className="py-1">
@@ -134,7 +134,7 @@ export function Sidebar() {
                 <ChevronDownIcon className="h-4 w-4" />
               )
             }
-            className={open === 4 ? 'text-gray-700' : 'text-gray-500'}
+            className={open === 4 ? 'text-gray-700' : ''}
           />
           {open === 4 && (
             <AccordionBody className="py-1">
@@ -162,7 +162,7 @@ export function Sidebar() {
                 <ChevronDownIcon className="h-4 w-4" />
               )
             }
-            className={open === 5 ? 'text-gray-700' : 'text-gray-500'}
+            className={open === 5 ? 'text-gray-700' : ''}
           />
 
           {open === 5 && (
@@ -172,7 +172,11 @@ export function Sidebar() {
                   <SidebarItem text="Leave Apply" isLink={true} to="/" />
                 </div>
                 <div className="ml-4">
-                  <SidebarItem text="Leave Balances" isLink={true} to="/" />
+                  <SidebarItem
+                    text="Leave Balances"
+                    isLink={true}
+                    to="/leave-balances"
+                  />
                 </div>
                 <div className="ml-4">
                   <SidebarItem text="Leave Calendar" isLink={true} to="/" />
@@ -201,7 +205,7 @@ export function Sidebar() {
                 <ChevronDownIcon className="h-4 w-4" />
               )
             }
-            className={open === 6 ? 'text-gray-700' : 'text-gray-500'}
+            className={open === 6 ? 'text-gray-700' : ''}
           />
           {open === 6 && (
             <AccordionBody className="py-1">
