@@ -69,7 +69,7 @@ export function Sidebar() {
           <SidebarItem
             icon={<FontAwesomeIcon icon={faBorderAll} className="h-5 w-5" />}
             text="My Worklife"
-            onClick={() => handleOpen(2)} // Toggle visibility
+            onClick={() => handleOpen(2)}
             suffixIcon={
               open === 2 ? (
                 <ChevronUpIcon className="h-4 w-4" />
@@ -77,6 +77,7 @@ export function Sidebar() {
                 <ChevronDownIcon className="h-4 w-4" />
               )
             }
+            className={open === 2 ? 'text-gray-700' : 'text-gray-500'}
           />
 
           {open === 2 && (
@@ -105,6 +106,7 @@ export function Sidebar() {
                 <ChevronDownIcon className="h-4 w-4" />
               )
             }
+            className={open === 3 ? 'text-gray-700' : 'text-gray-500'}
           />
           {open === 3 && (
             <AccordionBody className="py-1">
@@ -132,6 +134,7 @@ export function Sidebar() {
                 <ChevronDownIcon className="h-4 w-4" />
               )
             }
+            className={open === 4 ? 'text-gray-700' : 'text-gray-500'}
           />
           {open === 4 && (
             <AccordionBody className="py-1">
@@ -151,7 +154,7 @@ export function Sidebar() {
           <SidebarItem
             icon={<FontAwesomeIcon icon={faCalendar} className="h-5 w-5" />}
             text="Leave"
-            onClick={() => handleOpen(5)} // Toggle visibility
+            onClick={() => handleOpen(5)}
             suffixIcon={
               open === 5 ? (
                 <ChevronUpIcon className="h-4 w-4" />
@@ -159,6 +162,7 @@ export function Sidebar() {
                 <ChevronDownIcon className="h-4 w-4" />
               )
             }
+            className={open === 5 ? 'text-gray-700' : 'text-gray-500'}
           />
 
           {open === 5 && (
@@ -172,6 +176,13 @@ export function Sidebar() {
                 </div>
                 <div className="ml-4">
                   <SidebarItem text="Leave Calendar" isLink={true} to="/" />
+                </div>
+                <div className="ml-4">
+                  <SidebarItem
+                    text="Holiday Calendar"
+                    isLink={true}
+                    to="/holidaycalendar"
+                  />
                 </div>
               </List>
             </AccordionBody>
@@ -190,6 +201,7 @@ export function Sidebar() {
                 <ChevronDownIcon className="h-4 w-4" />
               )
             }
+            className={open === 6 ? 'text-gray-700' : 'text-gray-500'}
           />
           {open === 6 && (
             <AccordionBody className="py-1">

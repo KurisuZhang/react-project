@@ -8,6 +8,7 @@ const SidebarItem = ({
   isLink = false,
   to,
   suffixIcon,
+  className = 'text-gray-400',
 }) => {
   if (isLink) {
     return (
@@ -16,7 +17,7 @@ const SidebarItem = ({
         className="mt-2 flex cursor-pointer items-center space-x-3 rounded-md p-2 hover:bg-gray-200"
       >
         {icon && <div className="h-5 w-5">{icon}</div>}
-        <span className="text-gray-400">{text}</span>
+        <span className={className}>{text}</span>
         {suffixIcon && <div className="h-5 w-5">{suffixIcon}</div>}
       </Link>
     );
@@ -29,7 +30,7 @@ const SidebarItem = ({
     >
       <div className="flex items-center space-x-3">
         {icon && <div className="h-5 w-5">{icon}</div>}
-        <span className="text-gray-400">{text}</span>
+        <span className={className}>{text}</span>
       </div>
       {suffixIcon && <div className="h-5 w-5">{suffixIcon}</div>}
     </div>
@@ -43,6 +44,7 @@ SidebarItem.propTypes = {
   isLink: PropTypes.bool,
   to: PropTypes.string,
   suffixIcon: PropTypes.node,
+  className: PropTypes.string,
 };
 
 export default SidebarItem;
