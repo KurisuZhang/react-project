@@ -3,11 +3,11 @@ import ComponentNav from './ComponentNav';
 function LeaveBalances() {
   return (
     <main className="flex-1 bg-gray-100 p-6">
+       {/* Header */}
+       <ComponentNav title="Leave Balances" />
       <div className="flex h-full">
         {/* Main content */}
         <div className="flex-1 p-6">
-          {/* Header */}
-          <ComponentNav title="Leave Balances" />
           {/* Button Row */}
           <div className="mb-6 flex items-center justify-end space-x-2">
             <button className="rounded bg-blue-600 px-6 py-2 text-white">
