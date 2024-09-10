@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import 'react-calendar/dist/Calendar.css'; 
 import ComponentNav from './ComponentNav';
 import { Calendar, momentLocalizer } from 'react-big-calendar';

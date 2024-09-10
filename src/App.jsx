@@ -7,6 +7,9 @@ import HolidayCalendar from './components/home/holidaycalendar.jsx';
 import LeaveBalances from './components/leaveBalances.jsx';
 import LeaveCalendar from './components/leaveCalendar.jsx';
 import LeaveApply from './components/leaveApply.jsx';
+import LeavePending from './components/leavePending.jsx';
+import LeaveHistory from './components/leaveHistory.jsx';
+
 
 function App() {
   return (
@@ -17,6 +20,8 @@ function App() {
             <Route index element={<HomeComponent />} />
             <Route path="engage" element={<EngageComponent />} />
             <Route path="/leave/leave-apply" element={<LeaveApply />} />
+            <Route path="/leave/leave-pending" element={<LeavePending />} />
+            <Route path="/leave/leave-history" element={<LeaveHistory />} />
             <Route path="holidaycalendar" element={<HolidayCalendar />} />
             <Route path="leave/leave-balances" element={<LeaveBalances />} />
             <Route
