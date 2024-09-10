@@ -169,7 +169,11 @@ export function Sidebar() {
             <AccordionBody className="py-1">
               <List className="p-0">
                 <div className="ml-4">
-                  <SidebarItem text="Leave Apply" isLink={true} to="/" />
+                  <SidebarItem
+                    text="Leave Apply"
+                    isLink={true}
+                    to="/leave/leave-Apply"
+                  />
                 </div>
                 <div className="ml-4">
                   <SidebarItem
