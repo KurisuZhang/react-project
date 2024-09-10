@@ -10,7 +10,7 @@ import {
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { useNavigate } from 'react-router-dom';
 
-const LeaveApply = () => {
+const CompOffGrant = () => {
   const [formData, setFormData] = useState({
     leaveType: '',
     fromDate: '',
@@ -19,6 +19,7 @@ const LeaveApply = () => {
     session2: 'Session 2',
     applyingTo: '',
     ccTo: '',
+    days: '',
     contactDetails: '',
     reason: '',
     file: null,
@@ -31,7 +32,7 @@ const LeaveApply = () => {
   const [selectedStaff, setSelectedStaff] = useState([]);
   const [applyingDropdownOpen, setApplyingDropdownOpen] = useState(false);
   const [selectedApplyingTo, setSelectedApplyingTo] = useState(null);
-  const [activeCategory, setActiveCategory] = useState('Leave');
+  const [activeCategory, setActiveCategory] = useState('Comp Off Grant');
 
   const staffList = ['Shuai', 'Xi', 'Eileen', 'Jing', 'Zhen', 'Laurene'];
   const leaveTypes = ['Loss Of Pay', 'Comp - Off', 'Casual Leave'];
@@ -43,9 +44,9 @@ const LeaveApply = () => {
     setActiveTab(tab);
 
     if (tab === 'pending') {
-      navigate('/leave/leave-pending');
+      navigate('/leave/comp-off-grant');
     } else if (tab === 'history') {
-      navigate('/leave/leave-history');
+      navigate('/leave/comp-off-grant');
     }
   };
 
@@ -195,9 +196,8 @@ const LeaveApply = () => {
             {showMessage && (
               <div className="relative flex items-center justify-between rounded-md border border-yellow-100 bg-yellow-50 p-4">
                 <p className="text-sm text-gray-700">
-                  Leave is earned by an employee and granted by the employer to
-                  take time off work. The employee is free to avail this leave
-                  in accordance with the company policy.
+                  Compensatory Off is additional leave granted as a compensation
+                  for working overtime or on an off day.
                 </p>
                 <button
                   type="button"
@@ -208,6 +208,12 @@ const LeaveApply = () => {
                 </button>
               </div>
             )}
+
+            <div className="mt-5 grid grid-cols-1 sm:grid-cols-10">
+              <h3 className="col-span-full text-lg font-medium leading-7 text-gray-600">
+                Applying for Comp. Off Grant
+              </h3>
+            </div>
 
             {activeTab === 'apply' && (
               <div>
@@ -382,6 +388,28 @@ const LeaveApply = () => {
                       </MenuItems>
                     </Menu>
                   </div>
+                  {/* Days */}
+                  <div className="sm:col-span-6">
+                    <label
+                      htmlFor="days"
+                      className="block text-base font-semibold leading-6 text-gray-500"
+                    >
+                      Days
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        type="text"
+                        id="days"
+                        name="days"
+                        rows="1"
+                        value={formData.days}
+                        onChange={handleChange}
+                        className="placeholder:text-gray-350 block w-1/4 rounded-md border-0 px-2.5 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-base sm:leading-6"
+                        required
+                      ></input>
+                    </div>
+                  </div>
+
                   {/* Applying to */}
                   <div className="relative sm:col-span-6">
                     <label
@@ -666,4 +694,4 @@ const LeaveApply = () => {
   );
 };
 
-export default LeaveApply;
+export default CompOffGrant;
