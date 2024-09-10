@@ -9,7 +9,9 @@ import LeaveCalendar from './components/leaveCalendar.jsx';
 import LeaveApply from './components/leaveApply.jsx';
 import LeavePending from './components/leavePending.jsx';
 import LeaveHistory from './components/leaveHistory.jsx';
-
+import RestrictedHoliday from './components/restrictedHoliday.jsx';
+import LeaveCancel from './components/leaveCancel.jsx';
+import CompOffGrant from './components/compOffGrant.jsx';
 
 function App() {
   return (
@@ -20,6 +22,12 @@ function App() {
             <Route index element={<HomeComponent />} />
             <Route path="engage" element={<EngageComponent />} />
             <Route path="/leave/leave-apply" element={<LeaveApply />} />
+            <Route
+              path="leave/restricted-holiday"
+              element={<RestrictedHoliday />}
+            />
+            <Route path="leave/leave-cancel" element={<LeaveCancel />} />
+            <Route path="leave/comp-off-grant" element={<CompOffGrant />} />
             <Route path="/leave/leave-pending" element={<LeavePending />} />
             <Route path="/leave/leave-history" element={<LeaveHistory />} />
             <Route path="holidaycalendar" element={<HolidayCalendar />} />

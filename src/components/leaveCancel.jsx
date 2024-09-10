@@ -2,21 +2,24 @@ import { useState } from 'react';
 import ComponentNav from './ComponentNav';
 import { useNavigate } from 'react-router-dom';
 
-const PendingPage = () => {
-  const [activeTab, setActiveTab] = useState('pending');
-  const [activeCategory, setActiveCategory] = useState('Leave');
+const LeaveCancel = () => {
+  const [activeTab, setActiveTab] = useState('apply');
+  const [activeCategory, setActiveCategory] = useState('Leave Cancel');
 
   const navigate = useNavigate();
+  const [showMessage, setShowMessage] = useState(true);
+
+  const handleHideMessage = () => setShowMessage(false);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
 
     if (tab === 'pending') {
-      navigate('/leave/leave-pending');
+      navigate('/leave/leave-cancel');
     } else if (tab === 'history') {
-      navigate('/leave/leave-history');
+      navigate('/leave/leave-cancel');
     } else if (tab === 'apply') {
-      navigate('/leave/leave-apply');
+      navigate('/leave/leave-cancel');
     }
   };
 
@@ -37,7 +40,7 @@ const PendingPage = () => {
     <div className="bg-gray-20 flex min-h-screen w-full items-center justify-center">
       {/* Left Sidebar */}
       <div className="w-1/7 flex flex-col border-r p-6">
-        <div className="mt-5">
+        <div className="mt-[calc(20vh)]">
           <ul>
             <li
               onClick={() => handleCategoryChange('Leave')}
@@ -121,6 +124,27 @@ const PendingPage = () => {
 
         {/* Empty State */}
         <div className="mx-auto w-full max-w-5xl justify-center rounded-md bg-white p-10">
+          {/* Message Box */}
+          {showMessage && (
+            <div className="relative flex items-center justify-between rounded-md border border-yellow-100 bg-yellow-50 p-4">
+              <p className="text-sm text-gray-700">
+                Leave Cancel enables you to apply for cancellation of approved
+                leave applications. Please select a leave type to get started.
+              </p>
+              <button
+                type="button"
+                onClick={handleHideMessage}
+                className="text-sm text-blue-600 hover:underline"
+              >
+                Hide
+              </button>
+            </div>
+          )}
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-10">
+            <h3 className="col-span-full text-lg font-medium leading-7 text-gray-600">
+              Applying for Leave Cancel
+            </h3>
+          </div>
           <div className="flex flex-col items-center justify-center">
             <img
               src="/leave_calendar.jpg"
@@ -129,7 +153,7 @@ const PendingPage = () => {
             />
             {/* Text */}
             <p className="text-lg text-gray-500">
-              It's empty here! Your pending leave requests will appear here.
+              You have not applied for any leave yet, as per our record.
             </p>
           </div>
         </div>
@@ -138,4 +162,4 @@ const PendingPage = () => {
   );
 };
 
-export default PendingPage;
+export default LeaveCancel;
