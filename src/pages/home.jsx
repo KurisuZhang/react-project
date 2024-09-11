@@ -1,4 +1,4 @@
-import Sidebar from '../components/sidebar.jsx';
+import Sidebar from '../components/home/sidebar.jsx';
 import { Outlet } from 'react-router-dom';
 
 const Home = () => {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import ComponentNav from '../componentNav.jsx';
 
 const abbreviatedMonths = [
   'JAN',
@@ -64,13 +65,12 @@ const HolidayCalendar = () => {
 
   if (loading) return <div>Loading...</div>;
 
-  return (
+  const MyArrowComponent = () => (
     <div className="flex flex-1 items-center justify-center p-6">
       <div className="w-full">
         {' '}
         {/* Centering block with a max width */}
         <div className="mb-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold">Holiday Calendar</h1>
           <select
             value={selectedYear}
             onChange={handleYearChange}
@@ -112,6 +112,13 @@ const HolidayCalendar = () => {
         </div>
       </div>
     </div>
+  );
+
+  return (
+    <main className="flex-1 bg-gray-100 p-6">
+      {/* Header */}
+      <ComponentNav title="Leave Balances" navComponent={MyArrowComponent} />
+    </main>
   );
 };
 

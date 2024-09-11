@@ -2,16 +2,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/home.jsx';
 import Login from './pages/login.jsx';
 import HomeComponent from './components/home/homeComponent.jsx';
-import EngageComponent from './components/home/engageComponent.jsx';
-import HolidayCalendar from './components/home/holidaycalendar.jsx';
-import LeaveBalances from './components/leaveBalances.jsx';
-import LeaveCalendar from './components/leaveCalendar.jsx';
-import LeaveApply from './components/leaveApply.jsx';
-import LeavePending from './components/leavePending.jsx';
-import LeaveHistory from './components/leaveHistory.jsx';
-import RestrictedHoliday from './components/restrictedHoliday.jsx';
-import LeaveCancel from './components/leaveCancel.jsx';
-import CompOffGrant from './components/compOffGrant.jsx';
+import HolidayCalendar from './components/leave/holidaycalendar.jsx';
+import LeaveBalances from './components/leave/leaveBalances.jsx';
+import LeaveCalendar from './components/leave/leaveCalendar.jsx';
+import LeaveApply from './components/leave/leaveApply.jsx';
+import RestrictedHoliday from './components/leave/restrictedHoliday.jsx';
+import LeaveCancel from './components/leave/leaveCancel.jsx';
+import CompOffGrant from './components/leave/compOffGrant.jsx';
+import LeaveHome from './components/leave/leaveHome.jsx';
 
 function App() {
   return (
@@ -20,22 +18,19 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}>
             <Route index element={<HomeComponent />} />
-            <Route path="engage" element={<EngageComponent />} />
-            <Route path="/leave/leave-apply" element={<LeaveApply />} />
-            <Route
-              path="leave/restricted-holiday"
-              element={<RestrictedHoliday />}
-            />
-            <Route path="leave/leave-cancel" element={<LeaveCancel />} />
-            <Route path="leave/comp-off-grant" element={<CompOffGrant />} />
-            <Route path="/leave/leave-pending" element={<LeavePending />} />
-            <Route path="/leave/leave-history" element={<LeaveHistory />} />
-            <Route path="holidaycalendar" element={<HolidayCalendar />} />
+            <Route path="leave/leave-apply" element={<LeaveHome />}>
+              <Route index element={<LeaveApply />} />
+              <Route
+                path="restricted-holiday"
+                element={<RestrictedHoliday />}
+              />
+              <Route path="leave-cancel" element={<LeaveCancel />} />
+              <Route path="comp-off-grant" element={<CompOffGrant />} />
+            </Route>
+
             <Route path="leave/leave-balances" element={<LeaveBalances />} />
-            <Route
-              path="/leave/leave-calendar"
-              element={<LeaveCalendar />}
-            />{' '}
+            <Route path="leave/leave-calendar" element={<LeaveCalendar />} />
+            <Route path="leave/holidaycalendar" element={<HolidayCalendar />} />
           </Route>
           <Route path="login" element={<Login />} />
         </Routes>

@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarItem from '../components/sidebarItem';
+import SidebarItem from './sidebarItem.jsx';
 import { Card, List, Accordion, AccordionBody } from '@material-tailwind/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -193,7 +193,7 @@ export function Sidebar() {
                   <SidebarItem
                     text="Holiday Calendar"
                     isLink={true}
-                    to="/holidaycalendar"
+                    to="/leave/holidaycalendar"
                   />
                 </div>
               </List>

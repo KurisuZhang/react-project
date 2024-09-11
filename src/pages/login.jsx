@@ -1,6 +1,6 @@
-import LoginNav from "../components/loginNav.jsx";
-import LoginBody from "../components/loginBody.jsx";
-import Footer from "../components/footer.jsx";
+import LoginNav from '../components/login/loginNav.jsx';
+import LoginBody from '../components/login/loginBody.jsx';
+import Footer from '../components/login/footer.jsx';
 
 const Login = () => {
   return (
